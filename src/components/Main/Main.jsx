@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Card, CardHeader, CardContent, Typography, Grid, Divider} from '@material-ui/core';
+import { ExpenseTrackerContext } from '../../context/context';
 
 import useStyles from './styles';
 import Form from './Form/Form';
@@ -8,16 +9,14 @@ import List from './List/List'
 function Main() {
 
     const classes = useStyles();
+    const { balance } = useContext(ExpenseTrackerContext);
+    console.log(balance)
 
     return (
         <Card className={classes.root}>
-            <CardHeader title="Expense Tracker" subheader="Powerd By Speechly" />
+            <CardHeader title="Expense Tracker" subheader="" />
             <CardContent>
-                <Typography align='center' variant="h5">Total Balance ₹100 </Typography>
-                <Typography variant="subtitle1" style={{ lineHeight: '1.5em', marginTop: '20px' }}>
-                    {/*InfroCard*/}
-                    Try Saying : Add Income for ₹100 in Category Salary for Monday
-                </Typography>
+                <Typography align='center' variant="h5">Total Balance ₹{balance} </Typography>
                 <Divider />
                 <Form />             
             </CardContent>
