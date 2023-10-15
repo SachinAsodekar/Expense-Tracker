@@ -20,7 +20,7 @@ function Main() {
                 <Divider />
                 <Form />             
             </CardContent>
-            <CardContent className={classes.cartContent}>
+            <CardContent className={classes.cardContent}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <List />
